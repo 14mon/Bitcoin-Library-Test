@@ -9,7 +9,28 @@ namespace _125350929
         {
             Key privateKey = new Key(); // generate a random private key
             PubKey publicKey = privateKey.PubKey;
-            Console.WriteLine("Key Generate " + publicKey); // 0251036303164f6c458e9f7abecb4e55e5ce9ec2b2f1d06d633c9653a07976560c
+            Console.WriteLine("Key Generate:: " + publicKey);
+            Console.WriteLine();
+
+            //Bitcoin Address from Public Key
+            Console.Write("TestNet is a Bitcoin network for development purposes!:: ");
+            Console.WriteLine(publicKey.GetAddress(ScriptPubKeyType.Legacy, Network.Main));
+
+            Console.Write("MainNet is the Bitcoin network everybody uses!::");
+            Console.WriteLine(publicKey.GetAddress(ScriptPubKeyType.Legacy, Network.TestNet));
+            Console.WriteLine();
+
+            //Public Key Hash
+            Console.WriteLine();
+            var publicKeyHash = publicKey.Hash;
+            Console.WriteLine("PublicKeyHash::" + publicKeyHash);
+
+            var mainNetAddress = publicKeyHash.GetAddress(Network.Main);
+            var testNetAddress = publicKeyHash.GetAddress(Network.TestNet);
+
+            Console.WriteLine("MainNet with publicKeyHash:: " + mainNetAddress);
+            Console.WriteLine("TestNet with publicKeyHash:: " + testNetAddress);
+            Console.WriteLine();
 
         }
     }
