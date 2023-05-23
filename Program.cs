@@ -7,6 +7,21 @@ namespace _125350929
     {
         static void Main(string[] args)
         {
+            // BitCoinPublic();
+            //BitCoinPrivate();
+
+
+
+        }
+
+
+
+
+
+
+
+        static void BitCoinPublic()
+        {
             Key privateKey = new Key(); // generate a random private key
             PubKey publicKey = privateKey.PubKey;
             Console.WriteLine("Key Generate:: " + publicKey);
@@ -63,7 +78,29 @@ namespace _125350929
             var samePublicKeyHash = (KeyId)paymentScript.GetDestination()!;
             Console.WriteLine(publicKeyHash == samePublicKeyHash); // True
             var sameMainNetAddress3 = new BitcoinPubKeyAddress(samePublicKeyHash, Network.Main);
-            Console.WriteLine(mainNetAddress == sameMainNetAddress3); // True
+            Console.WriteLine(mainNetAddress == sameMainNetAddress3); // True}
+
+        }
+
+
+
+
+
+
+        static void BitCoinPrivate()
+        {
+            Console.WriteLine("Private key");
+            Key privateKey1 = new Key(); // generate a random private key
+            Console.WriteLine("generate our Bitcoin secret(also known as Wallet Import Format or simply WIF) from our private key for the mainnet");
+            BitcoinSecret mainNetPrivateKey = privateKey1.GetBitcoinSecret(Network.Main);
+            BitcoinSecret testNetPrivateKey = privateKey1.GetBitcoinSecret(Network.TestNet);
+
+            Console.WriteLine("generate secret from mainNetPrivateKey:: " + mainNetPrivateKey);
+            Console.WriteLine("generate secret from testNetPrivateKey:: " + testNetPrivateKey);
+
+            bool WifIsBitcoinSecret = mainNetPrivateKey == privateKey1.GetWif(Network.Main);
+
+            Console.WriteLine(WifIsBitcoinSecret); // True }
         }
     }
 }
