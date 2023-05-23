@@ -1,0 +1,74 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/emmm/Desktop/CoinPj/CoinPj.csproj": {}
+  },
+  "projects": {
+    "/home/emmm/Desktop/CoinPj/CoinPj.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/emmm/Desktop/CoinPj/CoinPj.csproj",
+        "projectName": "CoinPj",
+        "projectPath": "/home/emmm/Desktop/CoinPj/CoinPj.csproj",
+        "packagesPath": "/home/emmm/.nuget/packages/",
+        "outputPath": "/home/emmm/Desktop/CoinPj/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/emmm/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "HBitcoin": {
+              "target": "Package",
+              "version": "[0.1.8.2, )"
+            },
+            "NBitcoin": {
+              "target": "Package",
+              "version": "[7.0.25, )"
+            },
+            "Qbitninja.Client": {
+              "target": "Package",
+              "version": "[1.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.116/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
